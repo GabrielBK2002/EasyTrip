@@ -1,0 +1,16 @@
+<div class="planner">
+    <h2>Planeje Seu Roteiro</h2>
+    <button (click)="adicionarRoteiro()">+ Adicionar Roteiro</button>
+
+    <div *ngFor="let roteiro of roteiros; let i = index" class="roteiro-card">
+        <h3>{{ roteiro.nome }}</h3>
+        <p>Data: {{ roteiro.dataInicio }} - {{ roteiro.dataFim }}</p>
+        <button (click)="adicionarDestino(i)">+ Adicionar Destino</button>
+
+        <ul>
+            <li *ngFor="let destino of roteiro.destinos">
+                <strong>{{ destino.nome }}</strong> - {{ destino.data }}
+            </li>
+        </ul>
+    </div>
+</div>
